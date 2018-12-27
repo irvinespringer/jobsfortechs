@@ -4,9 +4,9 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 class Footer extends React.Component {
 	render() {
 		return (
-			<footer className="page-footer font-small blue .bg-dark footer">
+			<footer className="page-footer text-white blue bg-secondary">
 				<div className="footer-copyright text-center py-3">
-					Let&apos;s get social
+					Connect with us on Social Media
 					<div>
 						<i className="fab fa-facebook-square" />
 						&nbsp;
@@ -14,7 +14,11 @@ class Footer extends React.Component {
 						&nbsp;
 						<i className="fab fa-twitter-square" />
 					</div>
-					<p>All Rights Reserved 2018 Jobsite LLC</p>
+					<div>All Rights Reserved 2018 Jobsite LLC</div>
+					<div>
+						Made in Miami with &nbsp;{" "}
+						<i className="fas fa-heart text-danger" />
+					</div>
 				</div>
 			</footer>
 		);

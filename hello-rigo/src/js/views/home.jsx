@@ -15,12 +15,7 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div>
-				<div>
-					<Nav />
-				</div>
-				<div>
-					<LoginNav />
-				</div>
+				<div />
 
 				<div>
 					<Jumbo />
@@ -35,9 +30,6 @@ class Home extends React.Component {
 				</div>
 				<div>
 					<News />
-				</div>
-				<div>
-					<Footer />
 				</div>
 			</div>
 		);

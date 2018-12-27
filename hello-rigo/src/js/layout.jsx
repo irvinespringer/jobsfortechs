@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ScrollToTop from "./component/functional/scrollToTop.jsx";
+
 import Home from "./views/home.jsx";
 import Insight from "./views/insight.jsx";
 import About from "./views/about.jsx";
@@ -7,25 +9,38 @@ import Connect from "./views/connect.jsx";
 import SignUp from "./views/signup.jsx";
 import LogIn from "./views/login.jsx";
 import SearchResults from "./views/searchresults.jsx";
+import TechNews from "./views/technews.jsx";
+import Profile from "./views/profile.jsx";
+
+import Nav from "./component/nav.jsx";
+import LoginNav from "./component/loginnav.jsx";
+import Footer from "./component/footer.jsx";
 
 class Layout extends React.Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/home" component={Home} />
-					<Route exact path="/insight" component={Insight} />
-					<Route exact path="/about" component={About} />
-					<Route exact path="/connect" component={Connect} />
-					<Route exact path="/signup" component={SignUp} />
-					<Route exact path="/login" component={LogIn} />
-					<Route
-						exact
-						path="/search-results"
-						component={SearchResults}
-					/>
-				</Switch>
+				<ScrollToTop>
+					<Nav />
+
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/home" component={Home} />
+						<Route exact path="/insight" component={Insight} />
+						<Route exact path="/about" component={About} />
+						<Route exact path="/connect" component={Connect} />
+						<Route exact path="/signup" component={SignUp} />
+						<Route exact path="/login" component={LogIn} />
+						<Route exact path="/technews" component={TechNews} />
+						<Route exact path="/profile" component={Profile} />
+						<Route
+							exact
+							path="/search-results"
+							component={SearchResults}
+						/>
+					</Switch>
+					<Footer />
+				</ScrollToTop>
 			</BrowserRouter>
 		);
 	}

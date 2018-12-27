@@ -3,22 +3,97 @@
 .jumbotron {
     margin-bottom: 0px;
     padding-bottom: 10px;
-    background-image: url(https://images.pexels.com/photos/205316/pexels-photo-205316.png);
-    height: 500px;
-    background-position: 0% 25%;
+    background-image: url(https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg);
+    background-color: grey;
+    height: 700px;
+    background-position: 0% 34%;
     background-size: cover;
     background-repeat: no-repeat;
-    color: #002e4d;
+    color: #ffffff;
     font-weight: bold;
     border-bottom:20px;
-   
     
-    
-}
+    }
 
 .searchback{
          background-color: white;
          opacity: .3;
+
+}
+
+.newsPicThumb{
+    
+    max-width:200px;
+    max-height:200px;
 }
 
 
+.post-body {
+  position: relative;
+  margin: -45px 0px 0px 5%;
+  padding: 5%;
+  background: rgba(73, 80, 87, 0.37);
+  z-index: 10;
+}
+
+.post-body2 {
+  position: relative;
+  margin: 100px 150px 10px 5%;
+  padding: 5%;
+  background: rgba(13, 14, 14, 0.47);
+  z-index: 10;
+}
+
+.searchbutton {
+                position:relative;
+                padding:6px 15px;
+                border:2px solid #207cca;
+                background-color:#207cca;
+                color:#fafafa;
+}
+
+
+
+.formbar {
+                width:500px;
+                margin:50px auto;
+}
+
+.search {
+                padding:8px 15px;
+                background-color:#ebebeb;
+                border:1px solid #blue;
+}
+
+hr     { 
+                background-color:#ffffff; 
+                height: 4px;
+                border: 0px;
+}
+
+.techNewsImage {
+  width:100%;
+  height:100%;
+}
+
+.container img{
+    width:100%;
+}
+
+
+ul {
+list-style-type: none;
+}
+
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+//background-image: url(https://images.pexels.com/photos/205316/pexels-photo-205316.png);

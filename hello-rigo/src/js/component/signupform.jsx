@@ -4,11 +4,11 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 class SignUpForm extends React.Component {
 	render() {
 		return (
-			<div className="container mb-5 ">
-				<div className="row d-flex justify-content-center">
-					<div className="col-sm-4 ">
+			<div className="container mb-5 mt-5">
+				<div className="row d-flex justify-content-center ">
+					<div className="col-sm-4 bg-light">
 						<div>
-							Create your account
+							<h4>Create your account</h4>
 							<p>
 								Already have an account? &nbsp;
 								<Link to="./login">Log in</Link>
@@ -28,7 +28,7 @@ class SignUpForm extends React.Component {
 								</button>
 							</div>
 							<div>
-								<p>OR</p>
+								<p className="text-center">OR</p>
 							</div>
 							<form>
 								<div className="form-group">

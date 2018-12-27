@@ -10,10 +10,7 @@ class SignUp extends React.Component {
 	render() {
 		return (
 			<div>
-				<Nav />
-				<LoginNav />
 				<SignUpForm />
-				<Footer />
 			</div>
 		);
 	}
