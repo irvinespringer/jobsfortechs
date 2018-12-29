@@ -12,6 +12,9 @@ import SearchResults from "./views/searchresults.jsx";
 import TechNews from "./views/technews.jsx";
 import Profile from "./views/profile.jsx";
 import Resume from "./views/resume.jsx";
+import EmployerProfile from "./views/employerprofile.jsx";
+import RecentJobsPosted from "./views/recentjobsposted.jsx";
+import PostJobForm from "./views/postjobform.jsx";
 
 import Nav from "./component/nav.jsx";
 import LoginNav from "./component/loginnav.jsx";
@@ -37,9 +40,15 @@ class Layout extends React.Component {
 						<Route exact path="/resume" component={Resume} />
 						<Route
 							exact
-							path="/search-results"
-							component={SearchResults}
+							path="/employerprofile"
+							component={EmployerProfile}
 						/>
+						<Route
+							exact
+							path="/recent-jobs"
+							component={RecentJobsPosted}
+						/>
+						<Route exact path="/post-job" component={PostJobForm} />
 					</Switch>
 					<Footer />
 				</ScrollToTop>
