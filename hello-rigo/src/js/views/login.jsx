@@ -6,6 +6,7 @@ import LoginNav from "../component/loginnav.jsx";
 import LogForm from "../component/loginform.jsx";
 import Footer from "../component/footer.jsx";
 import AccountSettingsForm from "../component/accountsettingsform.jsx";
+import ResumeForm from "../component/resumeform.jsx";
 
 class LogIn extends React.Component {
 	render() {
@@ -14,6 +15,8 @@ class LogIn extends React.Component {
 				<LogForm />
 
 				<AccountSettingsForm />
+
+				<ResumeForm />
 			</div>
 		);
 	}

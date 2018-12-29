@@ -1,20 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import SearchBar from "../component/search.jsx";
+import ProfileNav from "../component/profilenav.jsx";
 
 class Profile extends React.Component {
 	render() {
 		return (
 			<div className="container ">
-				<p className=" text-right mt-4 mb-4">
-					{" "}
-					Hello irvine.springer@gmail.com &nbsp;
-					<Link to="/">
-						{" "}
-						<i className="fas fa-sign-out-alt" />
-						Log out
-					</Link>
-				</p>
+				<ProfileNav />
 				<div className="container mt-2 mb-5 ">
 					<SearchBar />
 				</div>
@@ -28,10 +21,9 @@ class Profile extends React.Component {
 								<li className="mb-3">
 									<Link to="/">Upload Resume</Link>
 								</li>
-								<li className="mb-3">
-									Update Experience &nbsp;{" "}
-									<i className="fas fa-edit" />
-								</li>
+								<Link to="/resume">
+									<li className="mb-3">Update Resume</li>
+								</Link>
 								<li className="mb-3">
 									<Link to="/">
 										<i className="fas fa-sign-out-alt" />

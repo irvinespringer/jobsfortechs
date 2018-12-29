@@ -11,9 +11,11 @@ import LogIn from "./views/login.jsx";
 import SearchResults from "./views/searchresults.jsx";
 import TechNews from "./views/technews.jsx";
 import Profile from "./views/profile.jsx";
+import Resume from "./views/resume.jsx";
 
 import Nav from "./component/nav.jsx";
 import LoginNav from "./component/loginnav.jsx";
+import ProfileNav from "./component/profilenav.jsx";
 import Footer from "./component/footer.jsx";
 
 class Layout extends React.Component {
@@ -22,7 +24,6 @@ class Layout extends React.Component {
 			<BrowserRouter>
 				<ScrollToTop>
 					<Nav />
-
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/home" component={Home} />
@@ -33,6 +34,7 @@ class Layout extends React.Component {
 						<Route exact path="/login" component={LogIn} />
 						<Route exact path="/technews" component={TechNews} />
 						<Route exact path="/profile" component={Profile} />
+						<Route exact path="/resume" component={Resume} />
 						<Route
 							exact
 							path="/search-results"

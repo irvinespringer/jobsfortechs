@@ -6,7 +6,7 @@ class AccountSettingsForm extends React.Component {
 		return (
 			<div className="container mt-5 mb-5 ">
 				<div className="row ">
-					<div className="col-md-12">
+					<div className="col-md-12 bg-light shadow  bg-white rounded">
 						<form>
 							<div className="form-group">
 								<label className="control-label">
@@ -152,7 +152,7 @@ class AccountSettingsForm extends React.Component {
 								<button
 									type="submit"
 									className="btn btn-primary">
-									Update
+									Save
 								</button>
 							</div>
 						</form>
