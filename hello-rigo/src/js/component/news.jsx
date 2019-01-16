@@ -1,29 +1,34 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+//import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 
 class News extends React.Component {
+	constructor() {
+		super();
+		this.state = {};
+	}
 	render() {
 		return (
 			<div className="container mb-5">
 				<Context.Consumer>
 					{({ store }) => {
-						let id = this.props.id;
+						//let id = this.props.id;
 
 						return (
-							<div className="row" id={id} key={id}>
+							<div className="row" /*id={id} key={id}*/>
 								<div className="col-sm-6 ">
 									<ul className="list-unstyled">
 										<li className="media">
 											<img
 												className="mr-3 newsPicThumb"
-												src={store.news[id].urlToImage}
+												//src={store.news[id].urlToImage}
 												alt=""
 											/>
 											<div className="media-body">
 												<h5 className="mt-0 mb-1">
-													{store.news[id].title}
+													{/*{store.news[id].title}*/}
 												</h5>
 												Cras sit amet nibh libero, in
 												gravida nulla. Nulla vel metus

@@ -1,5 +1,6 @@
 import React from "react";
 import getState from "./store.js";
+import fetch from "isomorphic-fetch";
 
 export const Context = React.createContext(null);
 
