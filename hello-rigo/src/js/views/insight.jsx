@@ -6,7 +6,9 @@ import Nav from "../component/nav.jsx";
 //create your first component
 class Insight extends React.Component {
 	render() {
-		return <div>This will house the blog</div>;
+		return (
+			<div>This will house the blog with api pull info via wordpress</div>
+		);
 	}
 }
 export default Insight;

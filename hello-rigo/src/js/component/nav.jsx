@@ -35,7 +35,7 @@ class Nav extends React.Component {
 				</div>
 
 				<div>
-					<a className="navbar-brand  ">Techsperts</a>
+					<a className="navbar-brand  ">TechExperts</a>
 				</div>
 
 				<button

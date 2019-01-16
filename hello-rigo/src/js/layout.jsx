@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/functional/scrollToTop.jsx";
+import Store from "./store/appContext.jsx";
 
 import Home from "./views/home.jsx";
 import Insight from "./views/insight.jsx";
@@ -40,8 +41,13 @@ class Layout extends React.Component {
 						<Route exact path="/resume" component={Resume} />
 						<Route
 							exact
-							path="/employerprofile"
+							path="/employer-profile"
 							component={EmployerProfile}
+						/>
+						<Route
+							exact
+							path="/search-results"
+							component={SearchResults}
 						/>
 						<Route
 							exact

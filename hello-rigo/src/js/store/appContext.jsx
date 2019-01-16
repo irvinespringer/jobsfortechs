@@ -7,19 +7,21 @@ const Store = PassedComponent => {
 	class StoreWrapper extends React.Component {
 		constructor(props) {
 			super(props);
-			this.state = getState({
-				getStore: () => this.state.store,
-				setStore: updatedStore =>
-					this.setState({
-						store: Object.assign(this.state.store, updatedStore)
-					})
-			});
+			this.state = getState(this);
 		}
 
 		componentDidMount() {
-			// this function is the equivalent to "window.onLoad"
-			// it only run once on the entire application lifetime
-			// you should do your ajax requests here
+			fetch(
+				"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=5b54a21984444a2b9765b50bbb358179"
+			)
+				.then(response => response.json())
+
+				// to update store information
+				.then(data => {
+					let { store } = this.state;
+					store.news = data;
+					this.setState({ store });
+				});
 		}
 
 		render() {
@@ -30,6 +32,7 @@ const Store = PassedComponent => {
 			);
 		}
 	}
+
 	return StoreWrapper;
 };
 
