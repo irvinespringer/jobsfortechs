@@ -4,6 +4,7 @@ import ScrollToTop from "./component/functional/scrollToTop.jsx";
 import Store from "./store/appContext.jsx";
 
 import Home from "./views/home.jsx";
+
 import Insight from "./views/insight.jsx";
 import About from "./views/about.jsx";
 import Connect from "./views/connect.jsx";

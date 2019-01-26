@@ -1,8 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import YouTube from "react-youtube";
 
 class Video extends React.Component {
 	render() {
+		const opts = {
+			height: "390",
+			width: "640",
+			playerVars: {
+				// https://developers.google.com/youtube/player_parameters
+				autoplay: 1
+			}
+		};
+
 		return (
 			<div className="bg-light ">
 				<div className="container mb-5">
@@ -13,10 +23,11 @@ class Video extends React.Component {
 							</span>
 						</div>
 						<div className="col-sm-8">
-							<div className="embed-responsive embed-responsive-16by9">
-								<iframe
-									className="embed-responsive-item"
-									src="https://youtu.be/0fFYacBQPbA"
+							<div className="">
+								<YouTube
+									videoId="0fFYacBQPbA"
+									opts={opts}
+									onReady={this._onReady}
 								/>
 							</div>
 						</div>

@@ -24,10 +24,8 @@ class Home extends React.Component {
 				<div>
 					<Cards />
 				</div>
-
-				<div>
-					<Video />
-				</div>
+				<Video />
+				<div />
 				<News />
 			</div>
 		);

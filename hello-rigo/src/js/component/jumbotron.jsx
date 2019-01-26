@@ -9,14 +9,14 @@ class Jumbo extends React.Component {
 				<h1 className="display-4">
 					<i className="fas fa-code ml-5" />
 				</h1>
-				<p className="lead ml-5">Developers Welcome</p>
-				<p className="lead">
+				<div className="lead ml-5">Developers Welcome</div>
+				<div className="lead">
 					<div className="container mt-5 ">
 						<div className="post-body2">
 							<SearchBar />
 						</div>
 					</div>
-				</p>
+				</div>
 			</div>
 		);
 	}

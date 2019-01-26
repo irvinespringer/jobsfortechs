@@ -8,10 +8,17 @@ const Store = PassedComponent => {
 	class StoreWrapper extends React.Component {
 		constructor(props) {
 			super(props);
-			this.state = getState(this);
+			this.state = getState({
+				getStore: () => this.state.store,
+				setStore: updatedStore =>
+					this.setState({
+						store: Object.assign(this.state.store, updatedStore)
+					})
+			});
 		}
 
 		componentDidMount() {
+			//news api fetch
 			fetch(
 				"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=5b54a21984444a2b9765b50bbb358179"
 			)
@@ -20,7 +27,18 @@ const Store = PassedComponent => {
 				// to update store information
 				.then(data => {
 					let { store } = this.state;
-					store.news = data;
+					store = data;
+					this.setState({ store });
+				});
+
+			//wordpress blog fetch
+			fetch("http://www.marxholdings.com/techexperts/wp-json/wp/v2/posts")
+				.then(response => response.json())
+
+				// to update store information
+				.then(data => {
+					let { store } = this.state;
+					store.posts = data;
 					this.setState({ store });
 				});
 		}
