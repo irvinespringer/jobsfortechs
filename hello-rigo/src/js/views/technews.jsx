@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import PropTypes from "prop-types";
+import NewsCard from "../component/newscard.jsx";
 
 class TechNews extends Component {
 	render() {
@@ -10,33 +11,35 @@ class TechNews extends Component {
 			<div className="container mt-5 d-flex justify-content-center ">
 				<div className="row ">
 					<Context.Consumer>
-						{({ store, actions }) => {
-							return store.articles.map((news, index) => {
-								return (
-									<React.Fragment key={index}>
-										<div className="col-lg-12 ">
-											<div className=" mb-2  ">
-												<img
-													src={news.urlToImage}
-													className="techNewsImage"
-												/>
-											</div>
-											<div className="m-t-2">
-												<h4 className="">
-													{news.title}
-												</h4>
-											</div>
+						{({ store, items }) => {
+							return (items = store.articles
+								.filter((i, index) => index < 10)
+								.map((news, index) => {
+									return (
+										<React.Fragment key={index}>
+											<div className="col-lg-12 ">
+												<div className=" mb-2  ">
+													<img
+														src={news.urlToImage}
+														className="techNewsImage"
+													/>
+												</div>
+												<div className="m-t-2">
+													<h4 className="">
+														{news.title}
+													</h4>
+												</div>
 
-											<div className="text-left">
-												{news.content}
+												<div className="text-left">
+													{news.content}
+												</div>
+												<div>
+													<hr className="featurette-divider" />
+												</div>
 											</div>
-											<div>
-												<hr className="featurette-divider" />
-											</div>
-										</div>
-									</React.Fragment>
-								);
-							});
+										</React.Fragment>
+									);
+								}));
 						}}
 					</Context.Consumer>
 				</div>

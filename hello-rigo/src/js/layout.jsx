@@ -21,6 +21,7 @@ import PostJobForm from "./views/postjobform.jsx";
 import Nav from "./component/nav.jsx";
 import LoginNav from "./component/loginnav.jsx";
 import ProfileNav from "./component/profilenav.jsx";
+import NewsCard from "./component/newscard.jsx";
 import Footer from "./component/footer.jsx";
 
 class Layout extends React.Component {

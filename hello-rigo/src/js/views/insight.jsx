@@ -10,8 +10,8 @@ class Insight extends Component {
 			<div className="container mt-5 d-flex justify-content-center ">
 				<div className="row ">
 					<Context.Consumer>
-						{({ store }) => {
-							return store.posts.map((news, index) => {
+						{({ store, actions }) => {
+							return store.blog.map((news, index) => {
 								return (
 									<React.Fragment key={index}>
 										<div className="col-lg-12 ">

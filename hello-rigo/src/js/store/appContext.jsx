@@ -38,7 +38,7 @@ const Store = PassedComponent => {
 				// to update store information
 				.then(data => {
 					let { store } = this.state;
-					store.posts = data;
+					store.blog = data;
 					this.setState({ store });
 				});
 		}

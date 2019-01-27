@@ -14,9 +14,9 @@ class LogIn extends React.Component {
 			<div>
 				<LogForm />
 
-				<AccountSettingsForm />
+				{/*<AccountSettingsForm />
 
-				<ResumeForm />
+				<ResumeForm /> */}
 			</div>
 		);
 	}
