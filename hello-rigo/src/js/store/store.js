@@ -64,7 +64,27 @@ const getState = ({ getStore, setStore }) => {
 				//return 'Not Matched';
 
 				store.jobsearch = store.jobs.filter(item => {
-					return item.company_location === company_location;
+					//return (
+					//	item.job_title.search(new RegExp(job_title, "i")) > 0
+					//);
+
+					if (company_location !== "") {
+						return (
+							item.job_title
+								.toLowerCase()
+								.indexOf(job_title.toLowerCase()) > -1 &&
+							item.company_location.toLowerCase() ===
+								company_location.toLowerCase()
+						);
+					} else {
+						return (
+							item.job_title
+								.toLowerCase()
+								.indexOf(job_title.toLowerCase()) > -1
+						);
+					}
+
+					//return item.company_location === company_location;
 
 					// const lc = item.toString().toLowerCase();
 					// const filter = company_location.toString().toLowerCase();
