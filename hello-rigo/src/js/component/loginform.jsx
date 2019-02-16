@@ -1,10 +1,21 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import { withRouter, BrowserRouter, Router } from "react-router-dom";
+import PropTypes from "prop-types";
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 class LogForm extends React.Component {
+	constructor() {
+		super();
+
+		this.formPreventDefault = this.formPreventDefault.bind(this);
+	}
+
+	formPreventDefault(e) {
+		e.preventDefault();
+	}
+
 	render() {
 		const responseFacebook = response => {};
 		return (
@@ -17,13 +28,13 @@ class LogForm extends React.Component {
 									<div className="col-sm-4 bg-light ">
 										<div>
 											<h5>Sign In</h5>
-											<form>
+											<div>
 												<div className="form-group">
 													<label>Email</label>
 													<input
 														type="text"
 														className="form-control"
-														name="email"
+														id="email"
 													/>
 												</div>
 												<div className="form-group">
@@ -31,7 +42,7 @@ class LogForm extends React.Component {
 													<input
 														type="text"
 														className="form-control"
-														name="password"
+														id="password"
 													/>
 												</div>
 												<div className="form-check mb-3">
@@ -41,7 +52,7 @@ class LogForm extends React.Component {
 													/>
 													<label className="form-check-label">
 														Keep me signed in on
-														this device{" "}
+														this device
 														<p>
 															<Link to="/">
 																Forgot password?
@@ -51,14 +62,13 @@ class LogForm extends React.Component {
 												</div>
 												<div className="text-center">
 													<button
-														type="submit"
 														onClick={() =>
 															actions.signInUserClick(
 																document.querySelector(
-																	"[name=email"
+																	"[id=email"
 																).value,
 																document.querySelector(
-																	"[name=password"
+																	"[id=password"
 																).value,
 																this.props
 																	.history
@@ -68,14 +78,14 @@ class LogForm extends React.Component {
 														Sign In
 													</button>
 												</div>
-											</form>
+											</div>
 											<div>
 												<p className="text-center">
 													OR
 												</p>
 												<hr className="featurette-divider" />
 											</div>
-											{/* facebook login functionality*/}
+											{/* facebook login functionality
 											<div className="">
 												<FacebookLogin
 													appId="1233449633498286"
@@ -93,11 +103,9 @@ class LogForm extends React.Component {
 														</button>
 													)}
 												/>
-											</div>
+											</div>*/}
 											<div className="">
-												<button
-													type="submit"
-													className="btn btn-primary mb-2 btn-google ">
+												<button className="btn btn-primary mb-2 btn-google ">
 													Sign up with Google
 												</button>
 												<hr className="featurette-divider" />
@@ -119,7 +127,7 @@ class LogForm extends React.Component {
 	}
 }
 
-export default LogForm;
+export default withRouter(LogForm);
 
 LogForm.propTypes = {
 	history: PropTypes.object

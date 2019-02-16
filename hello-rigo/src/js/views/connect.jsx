@@ -19,9 +19,7 @@ class Connect extends React.Component {
 										</legend>
 
 										<div className="form-group">
-											<span className="col-md-1 col-md-offset-2 text-center">
-												<i className="fa fa-user bigicon" />
-											</span>
+											<span className="col-md-1 col-md-offset-2 text-center" />
 											<div className="col-md-8">
 												<input
 													id="fname"
@@ -33,9 +31,7 @@ class Connect extends React.Component {
 											</div>
 										</div>
 										<div className="form-group">
-											<span className="col-md-1 col-md-offset-2 text-center">
-												<i className="fa fa-user bigicon" />
-											</span>
+											<span className="col-md-1 col-md-offset-2 text-center" />
 											<div className="col-md-8">
 												<input
 													id="lname"
@@ -48,9 +44,7 @@ class Connect extends React.Component {
 										</div>
 
 										<div className="form-group">
-											<span className="col-md-1 col-md-offset-2 text-center">
-												<i className="fa fa-envelope-o bigicon" />
-											</span>
+											<span className="col-md-1 col-md-offset-2 text-center" />
 											<div className="col-md-8">
 												<input
 													id="email"
@@ -63,9 +57,7 @@ class Connect extends React.Component {
 										</div>
 
 										<div className="form-group">
-											<span className="col-md-1 col-md-offset-2 text-center">
-												<i className="fa fa-phone-square bigicon" />
-											</span>
+											<span className="col-md-1 col-md-offset-2 text-center" />
 											<div className="col-md-8">
 												<input
 													id="phone"

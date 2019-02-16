@@ -1,13 +1,21 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import {
+	BrowserRouter,
+	Route,
+	Switch,
+	Link,
+	withRouter
+} from "react-router-dom";
+import PropTypes from "prop-types";
+import { Context } from "../store/appContext.jsx";
 import SearchBar from "../component/search.jsx";
-// import ProfileNav from "../component/profilenav.jsx";
+import ProfileNav from "../component/profilenav.jsx";
 
 class Profile extends React.Component {
 	render() {
 		return (
 			<div className="container ">
-				{/*<ProfileNav />*/}
+				<ProfileNav />
 				<div className="container mt-2 mb-5 ">
 					<SearchBar />
 				</div>
@@ -19,7 +27,9 @@ class Profile extends React.Component {
 									<h5>Resume & Experience</h5>
 								</li>
 								<li className="mb-3">
-									<Link to="/">Upload Resume</Link>
+									<Link to="/update-resume">
+										Upload Resume
+									</Link>
 								</li>
 								<Link to="/resume">
 									<li className="mb-3">Update Resume</li>
@@ -36,44 +46,62 @@ class Profile extends React.Component {
 					<div className="col-6 ">
 						<div className="text-black shadow bg-white rounded">
 							<div className="text-right">
-								<i className="fas fa-edit" />{" "}
+								<i className="fas fa-edit" />
 							</div>
 
 							<ul className="">
 								<li className="text-center">
 									<h5>Account Settings</h5>
 								</li>
-								<li className="mb-3">
-									<span className="font-weight-bold">
-										Name:
-									</span>{" "}
-									Irvine Springer
-								</li>
-								<li className="mb-3">
-									<span className="font-weight-bold">
-										Email:
-									</span>{" "}
-									irvine.springer@gmail.com
-								</li>
-								<li className="mb-3">
-									<span className="font-weight-bold">
-										Password:
-									</span>{" "}
-									********
-								</li>
-								<li className="mb-3">
-									<span className="font-weight-bold">
-										Telephone:
-									</span>{" "}
-									7866377804
-								</li>
-								<li className="mb-3">
-									<span className="font-weight-bold">
-										{" "}
-										Address:
-									</span>{" "}
-									12136, SW 143LN, Miami, FL, 33186
-								</li>
+								<Context.Consumer>
+									{({ store, actions }) => {
+										let user = store.candidates.filter(
+											i => {
+												return (
+													i.email ===
+													store.login.email
+												);
+											}
+										);
+										return (
+											<React.Fragment>
+												<li className="mb-3">
+													<span className="font-weight-bold">
+														Name:
+													</span>
+
+													{user.full_name}
+												</li>
+												<li className="mb-3">
+													<span className="font-weight-bold">
+														Email:
+													</span>
+
+													{user.email}
+												</li>
+												<li className="mb-3">
+													<span className="font-weight-bold">
+														Password:
+													</span>
+													{user.password}
+												</li>
+												<li className="mb-3">
+													<span className="font-weight-bold">
+														Telephone:
+													</span>
+													{user.telephone}
+												</li>
+												<li className="mb-3">
+													<span className="font-weight-bold">
+														Address:
+													</span>
+													12136, SW 143LN, Miami, FL,
+													33186
+												</li>
+											</React.Fragment>
+										);
+									}}
+								</Context.Consumer>
 							</ul>
 						</div>
 					</div>
@@ -83,14 +111,13 @@ class Profile extends React.Component {
 						Close My Acccount
 					</div>
 					<div className="mt-2">
-						{" "}
 						When you close your account, your email address will no
 						longer receive marketing emails from Techsperts. You
 						will, however, continue to receive communication from
 						employers you have been in contact with prior to closing
 						your account. After closing your account, if you apply
 						for any jobs, you will receive communication from those
-						employers as well.{" "}
+						employers as well.
 					</div>
 				</div>
 			</div>
@@ -98,4 +125,14 @@ class Profile extends React.Component {
 	}
 }
 
-export default Profile;
+Profile.propTypes = {
+	full_name: PropTypes.string,
+	email: PropTypes.string,
+	password: PropTypes.string,
+	telephone: PropTypes.object,
+	address: PropTypes.object,
+	history: PropTypes.object,
+	match: PropTypes.object
+};
+
+export default withRouter(Profile);

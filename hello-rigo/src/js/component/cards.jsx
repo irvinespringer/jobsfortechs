@@ -6,7 +6,7 @@ class Cards extends React.Component {
 		return (
 			<div className="mb-4">
 				<div className="card-columns d-flex justify-content-center">
-					<div className="col-4">
+					<div className="col-md-4 col-sm-12">
 						<img
 							className="card-img-top"
 							src="https://images.pexels.com/photos/1157859/pexels-photo-1157859.jpeg"

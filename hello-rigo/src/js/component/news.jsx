@@ -8,11 +8,11 @@ import NewsCard from "../component/newscard.jsx";
 class News extends React.Component {
 	render() {
 		return (
-			<div className="container mb-5">
+			<div className="container mb-2 ">
 				<div className="row ">
 					<Context.Consumer>
 						{({ store, items }) => {
-							return (items = store.articles
+							return (items = store.blogs
 								.filter((i, index) => index < 6)
 								.map((news, index) => {
 									return <NewsCard id={index} key={index} />;
@@ -26,8 +26,6 @@ class News extends React.Component {
 }
 
 News.propTypes = {
-	id: PropTypes.number,
-	title: PropTypes.string,
 	urlToImage: PropTypes.string,
 	description: PropTypes.string,
 	publishedAt: PropTypes.string,

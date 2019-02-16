@@ -11,11 +11,13 @@ class ProfileNav extends React.Component {
 				<Context.Consumer>
 					{({ store, actions }) => {
 						let message = "";
-						const userStatus = store.users.find(user => {
-							return user.logStatus === true;
-						});
-						if (userStatus) {
-							message = "Hello " + userStatus.email;
+						const candidateStatus = store.candidates.find(
+							candidate => {
+								return candidate.logStatus === true;
+							}
+						);
+						if (candidateStatus) {
+							message = "Hello " + candidateStatus.email;
 						} else {
 							message = "Login";
 						}
@@ -23,7 +25,8 @@ class ProfileNav extends React.Component {
 						return (
 							<React.Fragment>
 								<div className=" text-right mt-4 mb-4">
-									{message} &nbsp;
+									{message}
+									&nbsp;
 									<Link to="/">
 										<i className="fas fa-sign-out-alt" />
 										Log out

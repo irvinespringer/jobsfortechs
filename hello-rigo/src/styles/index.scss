@@ -1,5 +1,9 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
+.Link {
+  text-decoration: none;
+}
+
 .jumbotron {
     margin-bottom: 0px;
     padding-bottom: 10px;
@@ -25,6 +29,7 @@
     
     max-width:200px;
     max-height:200px;
+    
 }
 
 
@@ -32,15 +37,16 @@
   position: relative;
   margin: -45px 0px 0px 5%;
   padding: 5%;
-  background: rgba(73, 80, 87, 0.37);
+  background: rgba(12, 12, 12, 0.76);
   z-index: 10;
+  font-size: 18px;
 }
 
 .post-body2 {
   position: relative;
   margin: 100px 150px 10px 5%;
   padding: 5%;
-  background: rgba(13, 14, 14, 0.47);
+  background: rgba(13, 14, 14, 0.72);
   z-index: 10;
 }
 
@@ -101,6 +107,7 @@ list-style-type: none;
     height:40px;
     line-height:20px; /* Height / no. of lines to display */
     overflow:hidden;
+    
     
 }
 //background-image: url(https://images.pexels.com/photos/205316/pexels-photo-205316.png);

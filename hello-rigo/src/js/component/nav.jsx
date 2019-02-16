@@ -7,65 +7,58 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 class Nav extends React.Component {
 	render() {
 		return (
-			<nav className="navbar navbar-expand-lg navbar-light bg-light shadow  bg-white rounded">
-				<div>
-					<ul className="nav ">
-						<li className="nav-item dropdown ml-auto">
-							<a
-								className="nav-link dropdown-toggle"
-								data-toggle="dropdown"
-								href="#"
-								role="button"
-								aria-haspopup="true"
-								aria-expanded="false">
-								<span> Start Here</span>
-								&nbsp;
-								<i className="fas fa-cog" />
-							</a>
-							<div className="dropdown-menu dropdown-menu-right">
-								<Link to="./login" className="dropdown-item">
-									Login
-								</Link>
-								<Link to="./signup" className="dropdown-item">
-									Sign up
-								</Link>
-							</div>
-						</li>
-					</ul>
+			<nav className="navbar navbar-expand-lg navbar-light bg-light shadow bg-white rounded">
+				<div className="nav-item dropdown ">
+					<a
+						className="nav-link dropdown-toggle"
+						data-toggle="dropdown"
+						href="#"
+						role="button"
+						aria-haspopup="true"
+						aria-expanded="false">
+						<span> Start Here</span>
+						&nbsp;
+						<i className="fas fa-cog" />
+					</a>
+					<div className="dropdown-menu dropdown-menu-right">
+						<Link to="/login" className="dropdown-item">
+							Login
+						</Link>
+						<Link to="/signup" className="dropdown-item">
+							Sign up
+						</Link>
+					</div>
 				</div>
 
-				<div>
-					<a className="navbar-brand  ">TechExperts</a>
-				</div>
+				<a className="navbar-brand text-primary">Zazool</a>
 
 				<button
 					className="navbar-toggler"
 					type="button"
 					data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
 					aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon" />
 				</button>
-
 				<div
-					className=" collapse navbar-collapse"
-					id="navbarSupportedContent ">
-					<ul className="nav navbar-nav ml-auto">
-						<li className="nav-item nav-link active">
-							<Link to="./home">Find Job</Link>
-						</li>
-						<li className="nav-item nav-link ">
-							<Link to="./insight">Insight</Link>
-						</li>
-						<li className="nav-item nav-link">
-							<Link to="./about">About us</Link>
-						</li>
-						<li className="nav-item nav-link ">
-							<Link to="./connect">Connect</Link>
-						</li>
-					</ul>
+					className="collapse navbar-collapse"
+					id="navbarNavAltMarkup">
+					<div className="navbar-nav ml-auto">
+						<div className="nav-item nav-link">
+							<Link to="/home">Find Job</Link>
+						</div>
+						<div className="nav-item nav-link">
+							<Link to="/insight">Insight</Link>
+						</div>
+						{/*<div className="nav-item nav-link">
+							<Link to="/about">About us</Link>
+						</div>*/}
+						<div className="nav-item nav-link">
+							<Link to="/connect">Connect</Link>
+						</div>
+					</div>
 				</div>
 			</nav>
 		);

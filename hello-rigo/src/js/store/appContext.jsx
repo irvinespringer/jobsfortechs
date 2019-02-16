@@ -18,27 +18,51 @@ const Store = PassedComponent => {
 		}
 
 		componentDidMount() {
-			//news api fetch
+			//blog api fetch
+			fetch("https://jobsite-database-api-is758.c9users.io/api/blogs/")
+				.then(response => response.json())
+
+				// to update store information
+				.then(data => {
+					let { store } = this.state;
+					store.blogs = data;
+					this.setState({ store });
+				});
+
+			//jobs api fetch
+			fetch("https://jobsite-database-api-is758.c9users.io/api/jobs/")
+				.then(response => response.json())
+
+				// to update store information
+				.then(data => {
+					let { store } = this.state;
+					store.jobs = data;
+					this.setState({ store });
+				});
+
+			//candidates api fetch
 			fetch(
-				"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=5b54a21984444a2b9765b50bbb358179"
+				"https://jobsite-database-api-is758.c9users.io/api/candidates/"
 			)
 				.then(response => response.json())
 
 				// to update store information
 				.then(data => {
 					let { store } = this.state;
-					store = data;
+					store.candidates = data;
 					this.setState({ store });
 				});
 
 			//wordpress blog fetch
-			fetch("http://www.marxholdings.com/techexperts/wp-json/wp/v2/posts")
+			fetch(
+				"https://www.marxholdings.com/techexperts/wp-json/wp/v2/posts"
+			)
 				.then(response => response.json())
 
 				// to update store information
 				.then(data => {
 					let { store } = this.state;
-					store.blog = data;
+					store.posts = data;
 					this.setState({ store });
 				});
 		}

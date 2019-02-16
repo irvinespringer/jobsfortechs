@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import ProfileNav from "../component/profilenav.jsx";
+// import ProfileNav from "../component/profilenav.jsx";
 
 class Resume extends React.Component {
 	render() {
 		return (
 			<div>
-				<ProfileNav />
+				{/*<ProfileNav />*/}
 				<div className="container mt-5 mb-5 ">
 					<div className="row ">
 						<div className="col-md-12 mb-5 ">

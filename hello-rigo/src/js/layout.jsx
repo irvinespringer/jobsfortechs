@@ -11,10 +11,13 @@ import Connect from "./views/connect.jsx";
 import SignUp from "./views/signup.jsx";
 import LogIn from "./views/login.jsx";
 import SearchResults from "./views/searchresults.jsx";
-import TechNews from "./views/technews.jsx";
+import Blog from "./views/blog.jsx";
+import BlogPost from "./views/blogpost.jsx";
 import Profile from "./views/profile.jsx";
 import Resume from "./views/resume.jsx";
+import UpdateResume from "./views/update-resume.jsx";
 import EmployerProfile from "./views/employerprofile.jsx";
+import AccountSettings from "./views/account-settings.jsx";
 import RecentJobsPosted from "./views/recentjobsposted.jsx";
 import PostJobForm from "./views/postjobform.jsx";
 
@@ -30,17 +33,28 @@ class Layout extends React.Component {
 			<BrowserRouter>
 				<ScrollToTop>
 					<Nav />
+
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/home" component={Home} />
-						<Route exact path="/insight" component={Insight} />
+						<Route exact path="/insight" component={Blog} />
+						<Route path="/insight/:theid" component={BlogPost} />
 						<Route exact path="/about" component={About} />
 						<Route exact path="/connect" component={Connect} />
 						<Route exact path="/signup" component={SignUp} />
 						<Route exact path="/login" component={LogIn} />
-						<Route exact path="/technews" component={TechNews} />
 						<Route exact path="/profile" component={Profile} />
+						<Route
+							exact
+							path="/account-settings"
+							component={AccountSettings}
+						/>
 						<Route exact path="/resume" component={Resume} />
+						<Route
+							exact
+							path="/update-resume"
+							component={UpdateResume}
+						/>
 						<Route
 							exact
 							path="/employer-profile"

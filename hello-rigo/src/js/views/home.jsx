@@ -10,6 +10,7 @@ import Video from "../component/video.jsx";
 import Cards from "../component/cards.jsx";
 import NewsCard from "../component/newscard.jsx";
 import News from "../component/news.jsx";
+
 import { Context } from "../store/appContext.jsx";
 
 //create your first component

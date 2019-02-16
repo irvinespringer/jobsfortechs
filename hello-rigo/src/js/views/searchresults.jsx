@@ -1,5 +1,8 @@
-import React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.jsx";
+import PropTypes from "prop-types";
 
 import Nav from "../component/nav.jsx";
 import LoginNav from "../component/loginnav.jsx";
@@ -16,25 +19,55 @@ class SearchResults extends React.Component {
 				</div>
 				<div className="container mt-5 mb-5 bg-light bg-light shadow ">
 					<div className="row">
-						<div className="col-sm-4 bg-light ">
-							Search Results
-							<div className="mt-1 mb-2 ">
-								<div className="font-weight-bold">
-									Job Title
-								</div>
-								<div className=" mt-1">Company Name</div>
-								<div>Location</div>
-								<div className=" mt-1">Description</div>
-								<div className="text-primary">
-									What are you waiting for? Apply Now!
-									<hr className="featurette-divider" />
-								</div>
-							</div>
-						</div>
+						<ul>
+							<Context.Consumer>
+								{({ store, actions }) => {
+									return store.jobsearch.map(
+										(item, index) => {
+											return (
+												<React.Fragment key={index}>
+													<li>
+														<div className="col-4 bg-light ">
+															Search Results
+															<div className="mt-1 mb-2 ">
+																<div className="font-weight-bold">
+																	{
+																		item.job_title
+																	}
+																</div>
+																<div className=" mt-1">
+																	{
+																		item.company_name
+																	}
+																</div>
+																<div>
+																	{
+																		item.company_location
+																	}
+																</div>
+																<div className=" mt-1">
+																	{
+																		item.job_description
+																	}
+																</div>
+																<div className="text-primary">
+																	What are you
+																	waiting for?
+																	Apply Now!
+																	<hr className="featurette-divider" />
+																</div>
+															</div>
+														</div>
+													</li>
+												</React.Fragment>
+											);
+										}
+									);
+								}}
+							</Context.Consumer>
+						</ul>
 
-						<div className="col-sm-1 bg-white" />
-
-						<div className="col-sm-7 bg-light">
+						<div className="col-8 bg-light">
 							Job Details
 							<div className="mt-1 mb-2 ">
 								<div className="font-weight-bold">
@@ -120,10 +153,15 @@ class SearchResults extends React.Component {
 								</span>
 							</div>
 						</div>
-					</div>
-				</div>{" "}
+					</div>{" "}
+				</div>
 			</div>
 		);
 	}
 }
-export default SearchResults;
+
+SearchResults.propTypes = {
+	id: PropTypes.number
+};
+
+export default withRouter(SearchResults);
