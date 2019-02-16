@@ -20,6 +20,7 @@ const getState = ({ getStore, setStore }) => {
 
 			//list of users/candidates from candidates api
 			candidates: [],
+			findjobdetails: [],
 
 			login: []
 		},
@@ -44,8 +45,12 @@ const getState = ({ getStore, setStore }) => {
 					store.candidates[candidateLogIndex].logStatus = true;
 					// alert(store.candidates[candidateLogIndex].logStatus);
 					//new array created to validate user to profile
-					store.login = emailInput;
-					//setStore({ store: store });
+					//store.login = emailInput;
+
+					store.login = store.candidates.filter(item => {
+						return item.email == emailInput;
+					});
+
 					history.push("/profile");
 				} else {
 					// attempt--;
@@ -56,17 +61,7 @@ const getState = ({ getStore, setStore }) => {
 			searchJobs: (job_title, company_location, history) => {
 				const store = getStore();
 
-				//          var jobfield= store.jobs.job_title.search(new RegExp(job_title, "i"));
-
-				//               if (jobfield>0)
-				//               return 'Matched';
-				//else
-				//return 'Not Matched';
-
 				store.jobsearch = store.jobs.filter(item => {
-					//return (
-					//	item.job_title.search(new RegExp(job_title, "i")) > 0
-					//);
 					return (
 						item.job_title
 							.toLowerCase()
@@ -75,29 +70,20 @@ const getState = ({ getStore, setStore }) => {
 							.toLowerCase()
 							.indexOf(company_location.toLowerCase()) > -1
 					);
-
-					//return item.company_location === company_location;
-
-					// const lc = item.toString().toLowerCase();
-					// const filter = company_location.toString().toLowerCase();
-					// return lc.includes(filter);
 				});
-
-				//family.filter(person => person.age > 18);
-
-				//var FilteredList = React.createClass({
-				//      filterList: function(event){
-				//      var updatedList = this.state.initialItems;
-				//      updatedList = updatedList.filter(function(item){
-				//      return item.toLowerCase().search(
-				//      event.target.value.toLowerCase()) !== -1;
-				//      });
-				//      this.setState({items: updatedList});
-				//       },
 
 				setStore({ store: store });
 
 				history.push("/search-results");
+			},
+
+			jobDetails: id => {
+				const store = getStore();
+				store.findjobdetails = store.jobsearch.find(x => {
+					return x.id === id;
+				});
+				// console.log(f);
+				setStore({ store: store });
 			}
 		}
 	};

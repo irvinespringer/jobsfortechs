@@ -55,50 +55,54 @@ class Profile extends React.Component {
 								</li>
 								<Context.Consumer>
 									{({ store, actions }) => {
-										let user = store.candidates.filter(
-											i => {
+										return store.login.map(
+											(user, index) => {
 												return (
-													i.email ===
-													store.login.email
+													<React.Fragment key={index}>
+														<li className="mb-3">
+															<span className="font-weight-bold">
+																Name:
+															</span>
+
+															{user.full_name}
+														</li>
+														<li className="mb-3">
+															<span className="font-weight-bold">
+																Email:
+															</span>
+
+															{user.email}
+														</li>
+														<li className="mb-3">
+															<span className="font-weight-bold">
+																Password:
+															</span>
+															{user.password}
+														</li>
+														<li className="mb-3">
+															<span className="font-weight-bold">
+																Telephone:
+															</span>
+															{user.telephone}
+														</li>
+														<li className="mb-3">
+															<span className="font-weight-bold">
+																Address:
+															</span>
+
+															{user.street_address1 +
+																"," +
+																user.street_address_2 +
+																"," +
+																user.city +
+																"," +
+																user.state +
+																"," +
+																user.zip_code}
+														</li>
+													</React.Fragment>
 												);
 											}
-										);
-										return (
-											<React.Fragment>
-												<li className="mb-3">
-													<span className="font-weight-bold">
-														Name:
-													</span>
-
-													{user.full_name}
-												</li>
-												<li className="mb-3">
-													<span className="font-weight-bold">
-														Email:
-													</span>
-
-													{user.email}
-												</li>
-												<li className="mb-3">
-													<span className="font-weight-bold">
-														Password:
-													</span>
-													{user.password}
-												</li>
-												<li className="mb-3">
-													<span className="font-weight-bold">
-														Telephone:
-													</span>
-													{user.telephone}
-												</li>
-												<li className="mb-3">
-													<span className="font-weight-bold">
-														Address:
-													</span>
-													12136, SW 143LN, Miami, FL,
-													33186
-												</li>
-											</React.Fragment>
 										);
 									}}
 								</Context.Consumer>

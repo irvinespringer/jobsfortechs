@@ -17,18 +17,21 @@ class SearchResults extends React.Component {
 				<div className="container mt-5  ">
 					<SearchBar />
 				</div>
-				<div className="container mt-5 mb-5 bg-light bg-light shadow ">
+				<div className="container mt-5 mb-5  ">
 					<div className="row">
-						<ul>
-							<Context.Consumer>
-								{({ store, actions }) => {
-									return store.jobsearch.map(
-										(item, index) => {
-											return (
-												<React.Fragment key={index}>
-													<li>
-														<div className="col-4 bg-light ">
-															Search Results
+						<div className="col-4 shadow-lg p-3 mb-5 bg-white rounded">
+							<ul className="list-group ">
+								<Context.Consumer>
+									{({ store, actions }) => {
+										let c = "visible";
+										return store.jobsearch.map(
+											(item, index) => {
+												return (
+													<React.Fragment key={index}>
+														<li className="">
+															<div className="text-success">
+																Search Result
+															</div>
 															<div className="mt-1 mb-2 ">
 																<div className="font-weight-bold">
 																	{
@@ -54,106 +57,103 @@ class SearchResults extends React.Component {
 																	What are you
 																	waiting for?
 																	Apply Now!
+																	<button
+																		onClick={() =>
+																			actions.jobDetails(
+																				item.id
+																			)
+																		}
+																		type="button"
+																		className="btn btn-primary mt-2">
+																		Show
+																	</button>
 																	<hr className="featurette-divider" />
 																</div>
 															</div>
-														</div>
+														</li>
+													</React.Fragment>
+												);
+											}
+										);
+									}}
+								</Context.Consumer>
+							</ul>
+						</div>
+
+						<Context.Consumer>
+							{({ store, actions }) => {
+								// let c = "visible";
+								let item = store.findjobdetails;
+
+								return (
+									<React.Fragment>
+										<div className="col-8 bg-light">
+											Job Details
+											<div className="mt-1 mb-2 ">
+												<div className="font-weight-bold">
+													{item.job_title}
+												</div>
+												<div className="">
+													{item.company_name}
+												</div>
+												<div>Location</div>
+												<button
+													type="button"
+													className="btn btn-primary mt-2">
+													Apply Now
+												</button>
+												<hr className="featurette-divider" />
+												<div className=" mt-2 mb-1 font-weight-bold">
+													Company overview:
+												</div>
+												<span className="mb-2">
+													{item.company_overview}
+												</span>
+												<div className=" mt-2 mb-2 font-weight-bold">
+													Job Description:
+												</div>
+												<span className="mb-2">
+													{item.job_description}
+												</span>
+												<div className=" mt-2 mb-2 font-weight-bold">
+													Responsibilities:
+												</div>
+												<span className="mb-2">
+													{item.responsibilities}
+												</span>
+												<div className=" mt-2 mb-2 font-weight-bold">
+													Qualifications:
+												</div>
+												<span className="mb-2">
+													<li>
+														{item.qualifications}
 													</li>
-												</React.Fragment>
-											);
-										}
-									);
-								}}
-							</Context.Consumer>
-						</ul>
-						{/*
-						<div className="col-8 bg-light">
-							Job Details
-							<div className="mt-1 mb-2 ">
-								<div className="font-weight-bold">
-									Job Title
-								</div>
-								<div className="">Company Name</div>
-								<div>Location</div>
-								<button
-									type="button"
-									className="btn btn-primary mt-2">
-									Apply Now
-								</button>
-								<hr className="featurette-divider" />
-								<div className=" mt-2 mb-1 font-weight-bold">
-									Company overview:
-								</div>
-								<span className="mb-2">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit. Donec tempus nulla at urna
-									mattis blandit. Vestibulum sit amet libero
-									eros. Nullam accumsan, lectus sit amet
-									euismod maximus, mauris metus tristique
-									orci, tristique dictum nisl ante at justo.
-									Etiam convallis ligula tortor
-								</span>
-								<div className=" mt-2 mb-2 font-weight-bold">
-									{" "}
-									Job Description:
-								</div>
-								<span className="mb-2">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit. Donec tempus nulla at urna
-									mattis blandit. Vestibulum sit amet libero
-									eros. Nullam accumsan, lectus sit amet
-									euismod maximus, mauris metus tristique
-									orci, tristique dictum nisl ante at justo.
-									Etiam convallis ligula tortor
-								</span>
-								<div className=" mt-2 mb-2 font-weight-bold">
-									Responsibilities:
-								</div>
-								<span className="mb-2">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit. Donec tempus nulla at urna
-									mattis blandit. Vestibulum sit amet libero
-									eros. Nullam accumsan, lectus sit amet
-									euismod maximus, mauris metus tristique
-									orci, tristique dictum nisl ante at justo.
-									Etiam convallis ligula tortor
-								</span>
-								<div className=" mt-2 mb-2 font-weight-bold">
-									Qualifications:
-								</div>
-								<span className="mb-2">
-									<li>Qualification 1</li>
-									<li>Qualification 2</li>
-									<li>Qualification 3</li>
-									<li>Qualification 4</li>
-								</span>
-								<div className="mt-2 mb-2 font-weight-bold">
-									Skills:
-								</div>
-								<span className="mb-2">
-									<li>Skill 1</li>
-									<li>Skill 2</li>
-									<li>Skill 3</li>
-									<li>Skill 4</li>
-								</span>
-								<div className="mt-2 mb-2 font-weight-bold">
-									{" "}
-									Salary:
-								</div>
-								<span className="mb-2">$80,000- $120,000</span>
-								<div className="mt-2 mb-2 font-weight-bold">
-									{" "}
-									Benefits:
-								</div>
-								<span className="mb-2">
-									<li>Benefit 1</li>
-									<li>Benefit 2</li>
-									<li>Benefit 3</li>
-									<li>Benefit 4</li>
-								</span>
-							</div>
-						</div> */}
-					</div>{" "}
+												</span>
+												<div className="mt-2 mb-2 font-weight-bold">
+													Skills:
+												</div>
+												<span className="mb-2">
+													<li>{item.skills}</li>
+												</span>
+												<div className="mt-2 mb-2 font-weight-bold">
+													Salary:
+												</div>
+												<span className="mb-2">
+													{item.salary}
+												</span>
+												<div className="mt-2 mb-2 font-weight-bold">
+													Benefits:
+												</div>
+												<span className="mb-2">
+													<li>{item.benefits}</li>
+												</span>
+											</div>
+										</div>
+									</React.Fragment>
+								);
+							}}
+						</Context.Consumer>
+					</div>
 				</div>
 			</div>
 		);
