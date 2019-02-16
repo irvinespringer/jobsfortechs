@@ -66,7 +66,7 @@ class SearchResults extends React.Component {
 								}}
 							</Context.Consumer>
 						</ul>
-
+						{/*
 						<div className="col-8 bg-light">
 							Job Details
 							<div className="mt-1 mb-2 ">
@@ -152,7 +152,7 @@ class SearchResults extends React.Component {
 									<li>Benefit 4</li>
 								</span>
 							</div>
-						</div>
+						</div> */}
 					</div>{" "}
 				</div>
 			</div>
