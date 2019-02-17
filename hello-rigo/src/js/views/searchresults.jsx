@@ -11,6 +11,18 @@ import Footer from "../component/footer.jsx";
 
 //create your first component
 class SearchResults extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { show: false };
+
+		this.toggleDiv = this.toggleDiv.bind(this);
+	}
+
+	toggleDiv = () => {
+		const { show } = this.state;
+		this.setState({ show: !show });
+	};
+
 	render() {
 		return (
 			<div className="">
@@ -58,11 +70,13 @@ class SearchResults extends React.Component {
 																	waiting for?
 																	Apply Now!
 																	<button
-																		onClick={() =>
+																		onClick={() => {
 																			actions.jobDetails(
 																				item.id
-																			)
-																		}
+																			);
+
+																			item.toggleDiv;
+																		}}
 																		type="button"
 																		className="btn btn-primary mt-2">
 																		Show
@@ -82,73 +96,78 @@ class SearchResults extends React.Component {
 
 						<Context.Consumer>
 							{({ store, actions }) => {
-								// let c = "visible";
 								let item = store.findjobdetails;
 
 								return (
 									<React.Fragment>
-										<div className="col-8 bg-light">
-											Job Details
-											<div className="mt-1 mb-2 ">
-												<div className="font-weight-bold">
-													{item.job_title}
+										{this.state.show && (
+											<div className="col-8 bg-light">
+												Job Details
+												<div className="mt-1 mb-2 ">
+													<div className="font-weight-bold">
+														{item.job_title}
+													</div>
+													<div className="">
+														{item.company_name}
+													</div>
+													<div>
+														{item.company_location}
+													</div>
+													<button
+														type="button"
+														className="btn btn-primary mt-2">
+														Apply Now
+													</button>
+													<hr className="featurette-divider" />
+													<div className=" mt-2 mb-1 font-weight-bold">
+														Company overview:
+													</div>
+													<span className="mb-2">
+														{item.company_overview}
+													</span>
+													<div className=" mt-2 mb-2 font-weight-bold">
+														Job Description:
+													</div>
+													<span className="mb-2">
+														{item.job_description}
+													</span>
+													<div className=" mt-2 mb-2 font-weight-bold">
+														Responsibilities:
+													</div>
+													<span className="mb-2">
+														{item.responsibilities}
+													</span>
+													<div className=" mt-2 mb-2 font-weight-bold">
+														Qualifications:
+													</div>
+													<span className="mb-2">
+														<li>
+															{
+																item.qualifications
+															}
+														</li>
+													</span>
+													<div className="mt-2 mb-2 font-weight-bold">
+														Skills:
+													</div>
+													<span className="mb-2">
+														<li>{item.skills}</li>
+													</span>
+													<div className="mt-2 mb-2 font-weight-bold">
+														Salary:
+													</div>
+													<span className="mb-2">
+														{item.salary}
+													</span>
+													<div className="mt-2 mb-2 font-weight-bold">
+														Benefits:
+													</div>
+													<span className="mb-2">
+														<li>{item.benefits}</li>
+													</span>
 												</div>
-												<div className="">
-													{item.company_name}
-												</div>
-												<div>Location</div>
-												<button
-													type="button"
-													className="btn btn-primary mt-2">
-													Apply Now
-												</button>
-												<hr className="featurette-divider" />
-												<div className=" mt-2 mb-1 font-weight-bold">
-													Company overview:
-												</div>
-												<span className="mb-2">
-													{item.company_overview}
-												</span>
-												<div className=" mt-2 mb-2 font-weight-bold">
-													Job Description:
-												</div>
-												<span className="mb-2">
-													{item.job_description}
-												</span>
-												<div className=" mt-2 mb-2 font-weight-bold">
-													Responsibilities:
-												</div>
-												<span className="mb-2">
-													{item.responsibilities}
-												</span>
-												<div className=" mt-2 mb-2 font-weight-bold">
-													Qualifications:
-												</div>
-												<span className="mb-2">
-													<li>
-														{item.qualifications}
-													</li>
-												</span>
-												<div className="mt-2 mb-2 font-weight-bold">
-													Skills:
-												</div>
-												<span className="mb-2">
-													<li>{item.skills}</li>
-												</span>
-												<div className="mt-2 mb-2 font-weight-bold">
-													Salary:
-												</div>
-												<span className="mb-2">
-													{item.salary}
-												</span>
-												<div className="mt-2 mb-2 font-weight-bold">
-													Benefits:
-												</div>
-												<span className="mb-2">
-													<li>{item.benefits}</li>
-												</span>
 											</div>
-										</div>
+										)}
 									</React.Fragment>
 								);
 							}}

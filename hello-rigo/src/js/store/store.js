@@ -20,6 +20,7 @@ const getState = ({ getStore, setStore }) => {
 
 			//list of users/candidates from candidates api
 			candidates: [],
+
 			findjobdetails: [],
 
 			login: []
@@ -82,6 +83,9 @@ const getState = ({ getStore, setStore }) => {
 				store.findjobdetails = store.jobsearch.find(x => {
 					return x.id === id;
 				});
+				// {
+				// 	this.toggleDiv;
+				// }
 				// console.log(f);
 				setStore({ store: store });
 			}
