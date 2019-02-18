@@ -13,7 +13,7 @@ import Footer from "../component/footer.jsx";
 class SearchResults extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { show: false };
+		this.state = { show: true };
 
 		this.toggleDiv = this.toggleDiv.bind(this);
 	}
@@ -80,6 +80,7 @@ class SearchResults extends React.Component {
 																		type="button"
 																		className="btn btn-primary mt-2">
 																		Show
+																		Details
 																	</button>
 																	<hr className="featurette-divider" />
 																</div>
