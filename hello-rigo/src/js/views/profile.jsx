@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 import SearchBar from "../component/search.jsx";
 import ProfileNav from "../component/profilenav.jsx";
+import Resumeupload from "../component/resumeupload.jsx";
 
 class Profile extends React.Component {
 	render() {
@@ -41,6 +42,9 @@ class Profile extends React.Component {
 									</Link>
 								</li>
 							</ul>
+						</div>
+						<div>
+							<Resumeupload />
 						</div>
 					</div>
 					<div className="col-6 ">
@@ -110,6 +114,7 @@ class Profile extends React.Component {
 						</div>
 					</div>
 				</div>
+
 				<div className="mb-2 mt-4 ">
 					<div className="text-danger font-weight-bold">
 						Close My Acccount
