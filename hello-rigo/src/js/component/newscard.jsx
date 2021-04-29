@@ -18,7 +18,7 @@ class NewsCard extends React.Component {
 									<li className="media" id={id} key={id}>
 										<img
 											className="mr-3 newsPicThumb"
-											src={store.blogs[id].urlToImage}
+											src={store.articles[id].urlToImage}
 											alt=""
 										/>
 										<div className="media-body">
@@ -26,13 +26,13 @@ class NewsCard extends React.Component {
 												<Link
 													to={
 														"/insight/" +
-														store.blogs[id].title
+														store.articles[id].title
 													}>
-													{store.blogs[id].title}{" "}
+													{store.articles[id].title}{" "}
 												</Link>
 											</h6>
 											<div className="snip">
-												{store.blogs[id].content}
+												{store.articles[id].content}
 											</div>
 										</div>
 									</li>

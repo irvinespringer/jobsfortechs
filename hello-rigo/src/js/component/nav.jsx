@@ -7,19 +7,8 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 class Nav extends React.Component {
 	render() {
 		return (
-			<nav className="navbar navbar-expand-lg navbar-light bg-light shadow bg-white rounded">
-				<div className="nav-item dropdown ">
-					<a
-						className="nav-link dropdown-toggle"
-						data-toggle="dropdown"
-						href="#"
-						role="button"
-						aria-haspopup="true"
-						aria-expanded="false">
-						<span> Start Here</span>
-						&nbsp;
-						<i className="fas fa-cog" />
-					</a>
+			<nav className="navbar navbar-expand-lg shadow backnav ">
+				<div className="nav-item dropdown  ">
 					<div className="dropdown-menu dropdown-menu-right">
 						<Link to="/login" className="dropdown-item">
 							Login
@@ -29,9 +18,9 @@ class Nav extends React.Component {
 						</Link>
 					</div>
 				</div>
-
-				<a className="navbar-brand text-primary">Zazool</a>
-
+				<i className="fas fa-suitcase-rolling fa-2x" />
+				&nbsp;
+				<a className="navbar-brand ">Test Site</a>
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -43,20 +32,35 @@ class Nav extends React.Component {
 					<span className="navbar-toggler-icon" />
 				</button>
 				<div
-					className="collapse navbar-collapse"
+					className="collapse navbar-collapse "
 					id="navbarNavAltMarkup">
-					<div className="navbar-nav ml-auto">
-						<div className="nav-item nav-link">
-							<Link to="/home">Find Job</Link>
+					<div className="navbar-nav   ">
+						<div className="nav-item nav-link  ">
+							<Link
+								to="/home"
+								style={{ textDecoration: "none" }}
+								className="ink">
+								Flights
+							</Link>
 						</div>
 						<div className="nav-item nav-link">
-							<Link to="/insight">Insight</Link>
+							<Link
+								to="/insight"
+								style={{ textDecoration: "none" }}
+								className="ink">
+								Hotels
+							</Link>
 						</div>
 						{/*<div className="nav-item nav-link">
-							<Link to="/about">About us</Link>
+							<Link to="/about">Cars</Link>
 						</div>*/}
 						<div className="nav-item nav-link">
-							<Link to="/connect">Connect</Link>
+							<Link
+								to="/connect"
+								style={{ textDecoration: "none" }}
+								className="ink">
+								Deals
+							</Link>
 						</div>
 					</div>
 				</div>

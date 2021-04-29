@@ -1,6 +1,10 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			//flight search
+
+			searchflights: [],
+
 			//this is where your store data lives
 			//new.org api array
 			articles: [],
@@ -59,23 +63,29 @@ const getState = ({ getStore, setStore }) => {
 				}
 			},
 
-			searchJobs: (job_title, company_location, history) => {
+			searchFlights: (
+				outbound,
+				inbound,
+				departure_date,
+				return_date,
+				history
+			) => {
 				const store = getStore();
 
-				store.jobsearch = store.jobs.filter(item => {
+				store.searchflights.filter(item => {
 					return (
-						item.job_title
-							.toLowerCase()
-							.indexOf(job_title.toLowerCase()) > -1 &&
-						item.company_location
-							.toLowerCase()
-							.indexOf(company_location.toLowerCase()) > -1
+						item.OriginId.toLowerCase().indexOf(
+							outbound.toLowerCase()
+						) > -1 &&
+						item.DestinationID.toLowerCase().indexOf(
+							inbound.toLowerCase()
+						) > -1
 					);
 				});
 
 				setStore({ store: store });
 
-				history.push("/search-results");
+				history.push("/searchresults");
 			},
 
 			jobDetails: id => {

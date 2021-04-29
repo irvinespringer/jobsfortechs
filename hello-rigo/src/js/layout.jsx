@@ -4,7 +4,6 @@ import ScrollToTop from "./component/functional/scrollToTop.jsx";
 import Store from "./store/appContext.jsx";
 
 import Home from "./views/home.jsx";
-
 import Insight from "./views/insight.jsx";
 import About from "./views/about.jsx";
 import Connect from "./views/connect.jsx";
@@ -26,6 +25,10 @@ import LoginNav from "./component/loginnav.jsx";
 import ProfileNav from "./component/profilenav.jsx";
 import NewsCard from "./component/newscard.jsx";
 import Footer from "./component/footer.jsx";
+import Why from "./component/whyus.jsx";
+import Newsletter from "./component/newsletter.jsx";
+import Dealslist from "./component/dealslist.jsx";
+import Skywidget from "./component/skywidget.jsx";
 import Resumeupload from "./component/resumeupload.jsx";
 
 class Layout extends React.Component {
@@ -45,6 +48,12 @@ class Layout extends React.Component {
 						<Route exact path="/signup" component={SignUp} />
 						<Route exact path="/login" component={LogIn} />
 						<Route exact path="/profile" component={Profile} />
+						<Route
+							exact
+							path="/searchresults"
+							component={SearchResults}
+						/>
+
 						<Route
 							exact
 							path="/account-settings"

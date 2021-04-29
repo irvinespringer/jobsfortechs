@@ -65,33 +65,34 @@ class Profile extends React.Component {
 													<React.Fragment key={index}>
 														<li className="mb-3">
 															<span className="font-weight-bold">
-																Name:
+																Name: &nbsp;
 															</span>
 
 															{user.full_name}
 														</li>
 														<li className="mb-3">
 															<span className="font-weight-bold">
-																Email:
+																Email:&nbsp;
 															</span>
 
 															{user.email}
 														</li>
 														<li className="mb-3">
 															<span className="font-weight-bold">
-																Password:
+																Password:&nbsp;
 															</span>
-															{user.password}
+															{/*{user.password}*/}
+															******
 														</li>
 														<li className="mb-3">
 															<span className="font-weight-bold">
-																Telephone:
+																Telephone:&nbsp;
 															</span>
 															{user.telephone}
 														</li>
 														<li className="mb-3">
 															<span className="font-weight-bold">
-																Address:
+																Address:&nbsp;
 															</span>
 
 															{user.street_address1 +

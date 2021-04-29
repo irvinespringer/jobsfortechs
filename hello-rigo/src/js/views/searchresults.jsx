@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import PropTypes from "prop-types";
 
+//import iberia from "../img/IB.png";
+
 import Nav from "../component/nav.jsx";
 import LoginNav from "../component/loginnav.jsx";
 import SearchBar from "../component/search.jsx";
@@ -29,9 +31,9 @@ class SearchResults extends React.Component {
 				<div className="container mt-5  ">
 					<SearchBar />
 				</div>
-				<div className="container mt-5 mb-5  ">
-					<div className="row">
-						<div className="col-4 shadow-lg p-3 mb-5 bg-white rounded">
+				<div className="container mt-5 mb-5   ">
+					<div className="row d-flex justify-content-center">
+						<div className="col-4  p-3 mb-5 bg-light mr-2 shadow-lg">
 							<ul className="list-group ">
 								<Context.Consumer>
 									{({ store, actions }) => {
@@ -65,6 +67,7 @@ class SearchResults extends React.Component {
 																		item.job_description
 																	}
 																</div>
+																<hr className="featurette-divider" />
 																<div className="text-primary">
 																	What are you
 																	waiting for?
@@ -102,70 +105,118 @@ class SearchResults extends React.Component {
 								return (
 									<React.Fragment>
 										{this.state.show && (
-											<div className="col-8 bg-light">
-												Job Details
-												<div className="mt-1 mb-2 ">
-													<div className="font-weight-bold">
-														{item.job_title}
+											<div className="col-6 shadow-lg ">
+												<div className="container">
+													<div className="row">
+														<div className="col">
+															<div className="mt-4 text-center">
+																<img src="https://marxholdings.com/images/deals/IB.png" />
+															</div>
+														</div>
+														<div className="col-6">
+															<div className="container mt-4">
+																<div className="row ">
+																	<div className=" col text-left">
+																		<div>
+																			<div className="text-right">
+																				<h5>
+																					16:08
+																				</h5>
+																			</div>
+																			<div className="text-right">
+																				<h6>
+																					MIA
+																				</h6>
+																			</div>
+																		</div>
+																	</div>
+																	<div className=" col-4 test-center">
+																		{" "}
+																		2{" "}
+																	</div>
+																	<div className=" col text-right">
+																		<div>
+																			<div className="text-left ">
+																				<h5>
+																					14:30
+																				</h5>
+																			</div>
+																			<div className="text-left">
+																				<h6>
+																					EDI
+																				</h6>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div className="col-6">
+															<div className="container mt-4">
+																<div className="row ">
+																	<div className=" col text-left">
+																		<div>
+																			<div className="text-right">
+																				<h5>
+																					16:08
+																				</h5>
+																			</div>
+																			<div className="text-right">
+																				<h6>
+																					MIA
+																				</h6>
+																			</div>
+																		</div>
+																	</div>
+																	<div className=" col-4 test-center">
+																		{" "}
+																		2{" "}
+																	</div>
+																	<div className=" col text-right">
+																		<div>
+																			<div className="text-left ">
+																				<h5>
+																					14:30
+																				</h5>
+																			</div>
+																			<div className="text-left">
+																				<h6>
+																					EDI
+																				</h6>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div className="col">
+															<div className="mt-4 text-center">
+																<h5 className="">
+																	$1200 USD
+																</h5>
+																<p className="mb-2 text-center">
+																	Expedia.com
+																</p>
+															</div>
+
+															<p>
+																<button
+																	type="button"
+																	className="btn btn-primary btn-block">
+																	Book
+																</button>
+																<div className="text-nowrap">
+																	{" "}
+																	For More
+																	Details{" "}
+																</div>
+																<div className="text-center ">
+																	<i className="fas fa-angle-down " />
+																</div>
+															</p>
+														</div>
 													</div>
-													<div className="">
-														{item.company_name}
-													</div>
-													<div>
-														{item.company_location}
-													</div>
-													<button
-														type="button"
-														className="btn btn-primary mt-2">
-														Apply Now
-													</button>
-													<hr className="featurette-divider" />
-													<div className=" mt-2 mb-1 font-weight-bold">
-														Company overview:
-													</div>
-													<span className="mb-2">
-														{item.company_overview}
-													</span>
-													<div className=" mt-2 mb-2 font-weight-bold">
-														Job Description:
-													</div>
-													<span className="mb-2">
-														{item.job_description}
-													</span>
-													<div className=" mt-2 mb-2 font-weight-bold">
-														Responsibilities:
-													</div>
-													<span className="mb-2">
-														{item.responsibilities}
-													</span>
-													<div className=" mt-2 mb-2 font-weight-bold">
-														Qualifications:
-													</div>
-													<span className="mb-2">
-														<li>
-															{
-																item.qualifications
-															}
-														</li>
-													</span>
-													<div className="mt-2 mb-2 font-weight-bold">
-														Skills:
-													</div>
-													<span className="mb-2">
-														<li>{item.skills}</li>
-													</span>
-													<div className="mt-2 mb-2 font-weight-bold">
-														Salary:
-													</div>
-													<span className="mb-2">
-														{item.salary}
-													</span>
-													<div className="mt-2 mb-2 font-weight-bold">
-														Benefits:
-													</div>
-													<span className="mb-2">
-														<li>{item.benefits}</li>
-													</span>
 												</div>
 											</div>
 										)}

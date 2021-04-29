@@ -10,6 +10,25 @@ import "bootstrap";
 import "../styles/index.scss";
 import "../styles/bootstrap-social.css";
 
+/*
+import "../styles/flights/jquery-ui.css";
+import "../styles/flights/calendar.css";
+import "../styles/flights/jquery-ui.css";
+import "../styles/jquery.formstyler.css";
+import "../styles/flights/style.css";
+
+*/
+
+//import ba from "../img/BA.png";
+//import dy from "../img/DY.png";
+//import ei from "../img/EI.png";
+
+//skyscanner flight search test widget
+
+//import Widget from "../styles/loader.js";
+
+//import Widget from "https://widgets.skyscanner.net/widget-server/js/loader.js";
+
 //import your own components
 import Layout from "./layout.jsx";
 

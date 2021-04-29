@@ -12,7 +12,7 @@ class News extends React.Component {
 				<div className="row ">
 					<Context.Consumer>
 						{({ store, items }) => {
-							return (items = store.blogs
+							return (items = store.articles
 								.filter((i, index) => index < 6)
 								.map((news, index) => {
 									return <NewsCard id={index} key={index} />;

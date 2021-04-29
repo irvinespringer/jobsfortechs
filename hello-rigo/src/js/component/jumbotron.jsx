@@ -5,17 +5,16 @@ import SearchBar from "../component/search.jsx";
 class Jumbo extends React.Component {
 	render() {
 		return (
-			<div className="mb-3  jumbotron jumbotron-fluid ">
-				<h1 className="display-4">
-					<i className="fas fa-code ml-5" />
+			<div className="mb-4  jumbotron ">
+				<h1 className="display-12 text-center mb-4">
+					<div className="lead ml-5" />
 				</h1>
-				<div className="lead ml-5 font-weight-bold">
-					Techies Welcome
-				</div>
 				<div className="lead">
-					<div className="container mt-5 ">
-						<div className="post-body2">
-							<SearchBar />
+					<div className="container mt-2 ">
+						<div className="row">
+							<div className="col-12 post-body2">
+								<SearchBar />
+							</div>
 						</div>
 					</div>
 				</div>
